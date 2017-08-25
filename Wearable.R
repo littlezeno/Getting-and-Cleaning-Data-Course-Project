@@ -5,10 +5,9 @@ library(plyr)
 # Merges the training and the test sets to create one data set
 # # Read description data
 actname<-read.table("./data/UCI HAR Dataset/activity_labels.txt",header=F)
-actname<-rename(actname,c("V1"="actID", "V2"="actname")) # Rename the activity label list
+colnames(actname)<-c("actID", "actname") # Rename the activity label list
 featurelist<-read.table("./data/UCI HAR Dataset/features.txt",header=F)
-featurelist<-rename(featurelist,c("V1"="featureID", "V2"="feature")) # Rename the feature list
-featurelist$feature<-gsub("-","",featurelist$feature)
+colnames(featurelist)<-c("featureID", "feature") # Rename the feature list
 featurelist$feature<-sub("\\(","",featurelist$feature)
 featurelist$feature<-sub("\\)","",featurelist$feature)
 featurelist$feature<-gsub("\\,","",featurelist$feature)
@@ -34,15 +33,14 @@ colnames(train)[1:2]<-c("subject","actID")
 
 # combine train and test data
 all<-rbind(test,train)
-dim(all)[2]
 colnames(all)[3:dim(all)[2]]<-featurelist$feature
 
 ##=========================
 #Extracts only the measurements on the mean and standard deviation for each measurement.
 ## Identify the columns that has mean and standard deviation
 colId<-grep("mean|std",featurelist$feature)
-colId<-colId+2 # the old list did not consider subject and act ID
-Sub.mean.std<-cbind(all[,1:2],all[,colId])
+colId2<-colId+2 # the old list did not consider subject and act ID
+Sub.mean.std<-cbind(all[,1:2],all[,colId2])
 
 ##=================
 #Uses descriptive activity names to name the activities in the data set
@@ -62,4 +60,8 @@ out<-summarise_all(out.temp, funs(mean)) # final output
 #======
 #output data
 write.csv(out,"./data/UCI HAR Dataset/mean_std_by_activity_subject.csv")
-
+measuretook<-data.frame(cbind(colId,featurelist$feature[colId]))
+colnames(measuretook)<-c("originalfeature_ID", "feature")
+measuretook<-mutate(measuretook,colnum_in_output=4:82)
+measuretook<-mutate(measuretook,aggregate_method="Average")
+write.csv(measuretook,"./data/UCI HAR Dataset/aggregated_features.csv")
