@@ -17,7 +17,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 List of submission files
 
 1. The submitted data set is tidy.--mean_std_by_activity_subject.csv
-2. The Github repo contains the required scripts---Wearable.R
+2. The Github repo contains the required scripts---run_analysis
 3. GitHub contains a code book that modifies and updates the available codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
 -- aggregated_features_info.md, aggregated_features.csv
 4. The README that explains the analysis files is clear and understandable.--README.md
