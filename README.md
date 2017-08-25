@@ -21,6 +21,13 @@ From the 4th column, all data represent an average value for the measure identif
 Only mean and standard deviation related measures from the original data source were summarized in the final data set.
 
 ## The codebook listed all variables that in final data set
+
+79 features that include mean and standard deviation measures were extracted from original database
+They are then averaged by each participant and each activity. 
+There are 30 participants and 6 acitivities
+Therefore, the aggreated data set include 180 oberservations
+each observation is the average value fo mean & standard deviation measures from the original data set.
+
 ## The R code wearables
 Listed code based on corresponding steps, including: 
 1. Merges the training and the test sets to create one data set.
