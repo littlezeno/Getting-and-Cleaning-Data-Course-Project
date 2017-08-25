@@ -22,11 +22,10 @@ Only mean and standard deviation related measures from the original data source 
 
 ## The codebook listed all variables that in final data set
 
-79 features that include mean and standard deviation measures were extracted from original database
-They are then averaged by each participant and each activity. 
-There are 30 participants and 6 acitivities
-Therefore, the aggreated data set include 180 oberservations
-each observation is the average value fo mean & standard deviation measures from the original data set.
+* 79 features that include mean and standard deviation measures were extracted from original database
+* They are then averaged by each participant and each activity. 
+* There are 30 participants and 6 acitivities
+* Therefore, the aggreated data set include 180 oberservations. And each observation is the average value fo mean & standard deviation measures from the original data set.
 
 ## The R code wearables
 Listed code based on corresponding steps, including: 
