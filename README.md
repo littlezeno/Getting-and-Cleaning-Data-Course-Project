@@ -14,6 +14,15 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 
 ## Explaination of Analyses file
+List of submission files
+
+1. The submitted data set is tidy.--mean_std_by_activity_subject.csv
+2. The Github repo contains the required scripts---Wearable.R
+3. GitHub contains a code book that modifies and updates the available codebooks with the data to indicate all the variables and summaries calculated, along with units, and any other relevant information.
+-- aggregated_features_info.md, aggregated_features.csv
+4. The README that explains the analysis files is clear and understandable.--README.md
+
+
 ### File structure of output data. "mean_std_by_activity_subject.csv"
 First 2 columns identify under which experiment conditions (activities) the data are collected
 The third columns identify from which participants the data are collected
